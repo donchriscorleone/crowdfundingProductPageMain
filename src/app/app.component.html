@@ -9,7 +9,7 @@
 <app-modal *ngIf="completeModalOpen" [isComplete]="true" [isOpen]="completeModalOpen" (closeModal)="handleCloseModal('completePledge', $event)"></app-modal>
 <app-main-content>
     <ng-container *ngFor="let card of cards">
-        <app-card [data]="card"></app-card>
+        <app-card [data]="card" (valueChange)="onValueChange($event)"></app-card>
     </ng-container>
 </app-main-content>
 

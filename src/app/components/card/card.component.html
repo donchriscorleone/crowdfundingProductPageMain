@@ -13,7 +13,7 @@
     </p>
     <div class="card__footer flex">
         <p class="card__body-text card__body-text-gray" *ngIf="data.quantity"><span>{{data.quantity}} </span>left</p>
-        <app-button *ngIf="!hasRadio" [color]="'green'" [text]="data.quantity <= 0 ? 'Out of Stock' : 'Select Reward'" [disabled]="data.quantity <= 0"></app-button>
+        <app-button *ngIf="!hasRadio" (click)="handleSelect(null)" [color]="'green'" [text]="data.quantity <= 0 ? 'Out of Stock' : 'Select Reward'" [disabled]="data.quantity <= 0"></app-button>
     </div>
 
     <div class="card__actions flex" *ngIf="isSelected && hasActions">

@@ -23,14 +23,17 @@ export class AppComponent {
   }
 
   handleCloseModal(modalName: string, event: boolean) {
-    if (modalName === 'pledgeProject')
+    if (modalName === 'pledgeProject') {
       this.isBackProjectOpen = false;
+      this.selectedProject = '';
+    }
     else if (modalName === 'completePledge')
       this.completeModalOpen = false;
   }
 
   onValueChange(event: {selected: string, pledge: number}) {
     this.selectedProject = event.selected;
+    this.handleBackProject(true);
   }
 
   handleOnSubmit(event: any) {
