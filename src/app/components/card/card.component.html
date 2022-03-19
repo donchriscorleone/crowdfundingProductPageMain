@@ -1,0 +1,29 @@
+<article class="card grid" [class.disabled]="data.quantity <= 0" [class.card__selected]="isSelected" [style.maxWidth]="maxWidth">
+    <div class="card__header-container flex">
+        <div class="selection-container" *ngIf="hasRadio">
+            <input [disabled]="data.quantity <= 0" type="radio" class="selection-container__radio" [checked]="isSelected" (change)="handleSelect($event)">
+        </div>
+        <div class="card__header-text flex">
+            <h3 class="card__header" [class.hover-green]="hasRadio && data.quantity > 0">{{data.title}}</h3>
+            <h4 class="card__sub-header">Pledge ${{data.price}} or more </h4>
+        </div>
+    </div>
+    <p class="card__body-text card__body-text-gray card__body">
+        {{data.body}}
+    </p>
+    <div class="card__footer flex">
+        <p class="card__body-text card__body-text-gray" *ngIf="data.quantity"><span>{{data.quantity}} </span>left</p>
+        <app-button *ngIf="!hasRadio" [color]="'green'" [text]="data.quantity <= 0 ? 'Out of Stock' : 'Select Reward'" [disabled]="data.quantity <= 0"></app-button>
+    </div>
+
+    <div class="card__actions flex" *ngIf="isSelected && hasActions">
+        <p class="card__body-text card__body-text-gray">Enter your pledge</p>
+        <div class="card__action flex">
+            <div class="input-wrapper">
+                <input [formControl]="pledge" type="number" class="card__action-input">
+                <span>$</span>
+            </div>
+            <app-button [color]="'green'" [text]="'Continue'" [disabled]="pledge.hasError('min') || pledge.hasError('required')" (click)="handleSubmit()"></app-button>
+        </div>
+    </div>
+</article>

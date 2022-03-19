@@ -1,0 +1,85 @@
+@import './../../../assets/variables.scss';
+
+button {
+    padding: 15px 35px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+
+    transition: all .5s;
+}
+
+.btn-100 {
+    width: 100%;
+}
+
+.green {
+    background-color: $moderate-cyan;
+
+    &:hover {
+        background-color: $dark-cyan;
+    }
+}
+
+.disabled {
+    background-color: $dark-gray;
+    cursor: not-allowed;
+}
+
+.btn-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    position: relative;
+
+    img {
+        // position: absolute;
+    }
+
+    .icon-btn {
+        background-color: rgb(194, 191, 191);
+        color: $dark-gray;
+        font-weight: 700;
+        padding-left: 75px;
+
+        display: none;
+
+        &:hover {
+            background-color: $dark-gray;
+            color: rgb(194, 191, 191);
+        }
+    }
+
+    &.marked {
+        img {
+            filter: invert(38%) sepia(13%) saturate(3658%) hue-rotate(131deg) brightness(91%) contrast(84%);
+        }
+
+        .icon-btn {
+            color: $dark-cyan;
+            background-color: #ecf7f2;
+
+            &:hover {
+                color: #f7f4f4;
+                background-color: $dark-cyan;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+    .btn-container {
+        img {
+            position: absolute;
+        }
+
+        .icon-btn {
+            display: block;
+        }
+    }
+
+}

@@ -1,0 +1,24 @@
+
+.footer {
+    padding: 40px;
+    text-align: center;
+
+    p {
+        color: #aaa;
+    }
+
+    a {
+        text-decoration: none;
+        color: #a2a2a2;
+        transition: color .5s;
+
+        &:hover {
+            color: #777;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .footer {
+    }
+}

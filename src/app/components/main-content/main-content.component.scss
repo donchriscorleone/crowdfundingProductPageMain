@@ -1,0 +1,152 @@
+@import './../../../assets/variables.scss';
+
+.main {
+    max-width: 310px;
+    margin: 190px auto 0;
+}
+
+.main.grid {
+    display: grid;
+    row-gap: 40px;
+}
+
+.block {
+    max-width: 350px;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px 20px;
+}
+
+.article {
+    text-align: center;
+    margin: 20px auto 10px;
+    padding-bottom: 30px;
+
+    &::after {
+        content: '';
+        border-bottom: .8px solid $dark-gray;
+        display: block;
+        margin: 10px auto;
+        width: 100px;
+
+        // &:nth-child(1) {
+        // }
+
+        // &:nth-child(2) {
+        //     width: 70px;
+        // }
+
+        // &:nth-child(3) {
+        //     width: 50px;
+        // }
+    }
+
+    &:nth-child(3)::after {
+        border-bottom: none;
+    }
+
+    .article__header {
+
+    }
+
+    .article__subheader {
+        color: $dark-gray;
+    }
+}
+
+.progress-bar {
+    max-width: 256px;
+    background-color: $dark-cyan;
+    height: 10px;
+    border-radius: 20px;
+    position: relative;
+
+    &::after {
+        content: '';
+        background-color: $dark-gray;
+        border-left: none;
+        width: 40px;
+        height: 10px;
+        border-radius: 20px;
+        position: absolute;
+        right: 0;
+    }
+}
+
+.block.grid {
+    display: grid;
+    row-gap: 40px;
+    justify-content: center;
+}
+
+.block {
+    .block__header {
+        font-weight: 700;
+    }
+
+    .block__body {
+        color: $dark-gray;
+        font-size: .85rem;
+        line-height: 1.5;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .main {
+        max-width: 600px;
+        margin-bottom: 50px;
+    }
+
+    .block {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .block.article__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .article {
+        text-align: left;
+        margin: 20px auto 10px;
+        position: relative;
+    
+        &::after {
+            content: '';
+            border-right: .8px solid $dark-gray;
+            border-bottom: none;
+            margin: 10px auto;
+            height: 50px;
+            width: 20px;
+            right: -30px;
+            top: 0px;
+            position: absolute;
+        }
+
+        &:nth-child(3)::after {
+            border-right: none;
+        }
+    
+        .article__subheader {
+            color: $dark-gray;
+        }
+    }
+
+    .progress-bar {
+        grid-column: 1 / 4;
+        width: 100%;
+        max-width: 600px;
+
+        &::after {
+            width: 30%;
+        }
+    }
+
+    .block {
+        .block__body {
+            font-size: 1rem;
+        }
+    }
+    
+}

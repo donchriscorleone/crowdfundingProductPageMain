@@ -1,0 +1,37 @@
+<nav class="nav">
+    <div class="nav--header flex">
+        <div class="logo-container brand-logo">
+            <img src="./../../../assets/images/logo.svg" alt="Brand logo">
+        </div>
+        <ul class="nav-list">
+            <li class="nav-list-item">About</li>
+            <li class="nav-list-item">Discover</li>
+            <li class="nav-list-item">Get Started</li>
+        </ul>
+        <div class="logo-container burger-logo" (click)="handleMenu(dialog)">
+            <img [attr.src]="isDialogShown ? '/../../../assets/images/icon-close-menu.svg' : '/../../../assets/images/icon-hamburger.svg'" alt="Hamburger logo">
+        </div>
+    </div>
+
+    <div class="block grid text--center">
+        <h1 class="block__header">Mastercraft Bamboo Monitor Riser</h1>
+        <p class="block__body">A beautiful & handicrafted monitor stand to reduce neck and eye strain.</p>
+        <div class="buttons flex">
+            <app-button [color]="'green'" [text]="'Back this project'" (click)="backProject.emit(true)"></app-button>
+            <app-button [isIcon]="true" [text]="isBookMarked ? 'Bookmarked' : 'Bookmark'" [isMarked]="isBookMarked" (click)="isBookMarked = !isBookMarked"></app-button>
+        </div>
+    </div>
+</nav>
+
+<dialog #dialog>
+    <ul class="nav-list flex">
+        <li class="nav-list-item">
+            <p>About</p>
+        </li>
+        <li class="nav-list-item">
+            <p>Discover</p>
+        </li>
+        <li class="nav-list-item"><p>Get Started</p></li>
+        <li class="nav-list-item"><p>&copy; Christopher II</p></li>
+    </ul>
+</dialog>

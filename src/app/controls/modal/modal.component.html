@@ -1,0 +1,21 @@
+<dialog [open]="isOpen" #modal *ngIf="!isComplete; else completeTemplate">
+    <div class="container grid">
+        <div class="container__header">
+            <p class="container__title">Back this project</p>
+            <button class="close-btn" (click)="closeModal.emit(true)"><img src="./../../../assets/images/icon-close-modal.svg" alt=""></button>
+        </div>
+        <p class="container__body-text">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+        <div class="content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</dialog>
+
+<ng-template #completeTemplate>
+    <dialog [open]="isOpen" #modal class="dialog-complete">
+        <div class="container"></div>
+        <h1>Thanks for your support!</h1>
+        <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will getan email once our campaign is completed.</p>
+        <app-button [color]="'green'" text="Got it!" (click)="closeModal.emit(true)"></app-button>
+    </dialog>
+</ng-template>

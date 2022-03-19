@@ -1,0 +1,11 @@
+<button class="btn-100" *ngIf="!isIcon; else iconButtonTemplate" [class.green]="color === 'green'" [class.disabled]="disabled">{{text}}</button>
+
+<ng-template #iconButtonTemplate>
+    <div class="btn-container" [class.marked]="isMarked">
+        <img src="./../../../assets/images/icon-bookmark.svg" alt="">
+        <button class="button icon-btn">
+            {{text}}
+        </button>
+    </div>
+
+</ng-template>
