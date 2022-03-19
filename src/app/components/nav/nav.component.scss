@@ -1,7 +1,7 @@
 @import './../../../assets/variables.scss';
 
 nav {
-    background: url('./../../../assets/images/image-hero-mobile.jpg') no-repeat center center;
+    background: url('/assets/images/image-hero-mobile.jpg') no-repeat center center;
     padding: 30px 20px 0;
     min-height: 50vh;
     position: relative;
@@ -75,7 +75,7 @@ dialog {
 
 
     &::after {
-        content: url('./../../../assets/images/logo-mastercraft.svg');
+        content: url('/assets/images/logo-mastercraft.svg');
         position: absolute;
         top: -25px;
         left: 0;
@@ -110,7 +110,7 @@ dialog {
 
 @media screen and (min-width: 740px) {
     .nav {
-        background-image: url('./../../../assets/images/image-hero-desktop.jpg');
+        background-image: url('/assets/images/image-hero-desktop.jpg');
     }
 
     .nav--header {
